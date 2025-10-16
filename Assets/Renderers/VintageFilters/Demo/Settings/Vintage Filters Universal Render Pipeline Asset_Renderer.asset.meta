@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8b1960a7aae962f46ad9e6c2005d5266
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Demo/Settings/Vintage Filters
+    Universal Render Pipeline Asset_Renderer.asset
+  uploadId: 785248

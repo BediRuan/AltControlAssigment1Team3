@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 83843233f6bfb8c4d92e5b3d085723a8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Editor/Internal/Drawer.CheckUpdate.cs
+  uploadId: 785248

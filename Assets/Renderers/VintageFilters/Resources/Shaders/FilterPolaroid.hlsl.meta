@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4385b3116f71d634ca9efb626625fc57
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Resources/Shaders/FilterPolaroid.hlsl
+  uploadId: 785248

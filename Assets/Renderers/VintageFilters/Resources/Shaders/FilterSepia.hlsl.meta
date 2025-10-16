@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fa5bedc2ff2d0b34a9ba0465c3ba7f80
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Resources/Shaders/FilterSepia.hlsl
+  uploadId: 785248

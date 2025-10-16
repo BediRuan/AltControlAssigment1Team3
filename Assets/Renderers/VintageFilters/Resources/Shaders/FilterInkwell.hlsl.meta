@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cde7860f3208204489baa104ad0ca34c
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Resources/Shaders/FilterInkwell.hlsl
+  uploadId: 785248

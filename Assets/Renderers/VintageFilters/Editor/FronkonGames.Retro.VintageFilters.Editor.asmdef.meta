@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 221c3a5a73e12c7418ebd6d7a29e2d3c
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Editor/FronkonGames.Retro.VintageFilters.Editor.asmdef
+  uploadId: 785248

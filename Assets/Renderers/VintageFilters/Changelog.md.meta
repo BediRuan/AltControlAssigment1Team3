@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6ea96430e2a8b9c4a9f2e835e5c038f8
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Changelog.md
+  uploadId: 785248

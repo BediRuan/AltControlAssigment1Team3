@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 00c6ba3d79bd62b4c8bcab6e791b8ae1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Editor/Internal/Inspector.GUI.cs
+  uploadId: 785248

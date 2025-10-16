@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7a65ff83d1de0a848911e24703ed8d4d
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Resources/Shaders/FilterEarlybird.hlsl
+  uploadId: 785248

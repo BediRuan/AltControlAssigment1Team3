@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4bbed7607e67fcd4ea995dd18a391b15
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Resources/Shaders/FilterBrannan.hlsl
+  uploadId: 785248

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8610056f2458e7543a75611f70a9e098
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Resources/Shaders/FilterLordKevin.hlsl
+  uploadId: 785248

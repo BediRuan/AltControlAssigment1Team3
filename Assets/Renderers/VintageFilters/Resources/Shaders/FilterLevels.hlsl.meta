@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 36ba06e2c3d49c94f877045fa89e2ab1
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242600
+  packageName: 'Retro: Vintage Filters'
+  packageVersion: 2.1.0
+  assetPath: Assets/FronkonGames/Retro/VintageFilters/Resources/Shaders/FilterLevels.hlsl
+  uploadId: 785248
