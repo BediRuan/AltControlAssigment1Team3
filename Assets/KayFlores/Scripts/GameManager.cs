@@ -1,8 +1,15 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public TextMeshProUGUI orderTextLength;
+    public TextMeshProUGUI orderTextCurl;
+
+    public float desiredLength;
+    public float desiredCurl;
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -27,6 +34,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GenerateNewOrder();
+
     }
 
     private void Update()
@@ -42,8 +50,10 @@ public class GameManager : MonoBehaviour
         CurrentCustomerOrder = new HairSection() // applies to both sides of hair
         {
             curlAmount = Random.Range(0f, 1f) > 0.4f ? Random.Range(20f, 70f) : 0f, // 60% chance of having curls (of any amount)
-            currentLength = Random.Range(1, 4), // length between 1 and 3 (default is 4)
+            currentLength = Random.Range(1, 4) // length between 1 and 3 (default is 4)
         };
+        orderTextCurl.text = "Customer wants their hair curled to " + CurrentCustomerOrder.curlAmount.ToString() + " units";
+        orderTextLength.text = "Customer wants their hair to be " + CurrentCustomerOrder.currentLength.ToString() + " units long";
         Debug.Log($"New Customer Order: Curl Percentage is {CurrentCustomerOrder.curlAmount} | Cut Length is {CurrentCustomerOrder.currentLength}");
     }
 

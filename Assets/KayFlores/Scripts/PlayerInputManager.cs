@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine.InputSystem;
+using TMPro;
 
 [System.Serializable]
 public class HairSection
@@ -16,6 +17,12 @@ public class HairSection
 
 public class PlayerInputManager : MonoBehaviour
 {
+
+    public TextMeshProUGUI currentLLength;
+    public TextMeshProUGUI currentRLength;
+    public TextMeshProUGUI currentLCurl;
+    public TextMeshProUGUI currentRCurl;
+
     public static PlayerInputManager instance;
     private void Awake()
     {
@@ -71,11 +78,18 @@ public class PlayerInputManager : MonoBehaviour
                 break;
         }
 
+        currentLLength.text = "Current Left Length: " + currentSectionL.currentLength.ToString();
+        currentRLength.text = "Current Right Length: " + currentSectionR.currentLength.ToString();
+        currentLCurl.text = "Current Left Curl:" + currentSectionL.curlAmount.ToString();
+        currentRCurl.text = "Current Right Curl:" + currentSectionR.curlAmount.ToString();
+
         if (keyboard.enterKey.wasPressedThisFrame)
         {
             GameManager.instance.CalculateResult(currentSectionL, currentSectionR);
+            SetupCurrentHair();
         }
     }
+
 
     void UpdateNone()
     {
