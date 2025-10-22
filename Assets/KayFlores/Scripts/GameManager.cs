@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public float desiredLength;
     public float desiredCurl;
+    public GameObject confettiPS;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -94,6 +96,7 @@ public class GameManager : MonoBehaviour
 
         if (hairCurlAccuracy >= HairCurlMinAccuracy && hairCutAccuracy >= HairCutMinAccuracy)
         {
+            Instantiate(confettiPS, new Vector3(0, 80, 100), Quaternion.identity);
             Debug.Log("Customer is satisfied!");
         }
         else

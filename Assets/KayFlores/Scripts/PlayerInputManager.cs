@@ -40,6 +40,15 @@ public class PlayerInputManager : MonoBehaviour
 
     public float CurlRate = 5f;
 
+    public GameObject hairPS;
+
+    public GameObject selectorGO;
+
+    public GameObject curlingIronGO;
+
+    public GameObject scissorsGO;
+
+
     public void SetupCurrentHair()
     {
         currentSectionL = new HairSection()
@@ -100,6 +109,7 @@ public class PlayerInputManager : MonoBehaviour
     }
     public void UpdateScissors()
     {
+        selectorGO.transform.position = scissorsGO.transform.position;
         if (keyboard.sKey.wasPressedThisFrame)
         {
             currentTool = Tools.CurlingIron;
@@ -111,6 +121,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             if (currentSectionL.currentLength > 3)
             {
+                Instantiate(hairPS, new Vector3(-12,-35,90), Quaternion.identity);
                 currentSectionL.currentLength = 3;
                 Debug.Log("Cut left strand to length " + currentSectionL.currentLength);
             }
@@ -119,6 +130,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             if (currentSectionL.currentLength > 2)
             {
+                Instantiate(hairPS, new Vector3(-12, -25, 90), Quaternion.identity);
                 currentSectionL.currentLength = 2;
                 Debug.Log("Cut left strand to length " + currentSectionL.currentLength);
             }
@@ -127,6 +139,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             if (currentSectionL.currentLength > 1)
             {
+                Instantiate(hairPS, new Vector3(-12, -15, 90), Quaternion.identity);
                 currentSectionL.currentLength = 1;
                 Debug.Log("Cut left strand to length " + currentSectionL.currentLength);
             }
@@ -137,6 +150,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             if (currentSectionR.currentLength > 3)
             {
+                Instantiate(hairPS, new Vector3(12, -35, 90), Quaternion.identity);
                 currentSectionR.currentLength = 3;
                 Debug.Log("Cut right strand to length " + currentSectionR.currentLength);
             }
@@ -145,6 +159,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             if (currentSectionR.currentLength > 2)
             {
+                Instantiate(hairPS, new Vector3(12, -25, 90), Quaternion.identity);
                 currentSectionR.currentLength = 2;
                 Debug.Log("Cut right strand to length " + currentSectionR.currentLength);
             }
@@ -153,6 +168,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             if (currentSectionR.currentLength > 1)
             {
+                Instantiate(hairPS, new Vector3(12, -15, 90), Quaternion.identity);
                 currentSectionR.currentLength = 1;
                 Debug.Log("Cut right strand to length " + currentSectionR.currentLength);
             }
@@ -160,6 +176,7 @@ public class PlayerInputManager : MonoBehaviour
     }
     public void UpdateCurlingIron()
     {
+        selectorGO.transform.position = curlingIronGO.transform.position;
         if (keyboard.sKey.wasPressedThisFrame)
         {
             currentTool = Tools.Scissors;
