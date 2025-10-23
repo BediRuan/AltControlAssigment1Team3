@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     intensity: 1
-    filter: 24
+    filter: 0
     amaro:
       overlay: 0.5
     hefe:
@@ -106,7 +106,7 @@ MonoBehaviour:
     filmGrain:
       intensity: 0.3
       size: 1
-    brightness: 0
+    brightness: 0.07
     contrast: 1
     gamma: 1
     hue: 0
