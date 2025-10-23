@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,10 +8,26 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI orderTextLength;
     public TextMeshProUGUI orderTextCurl;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI resultText;
+    public TextMeshProUGUI customerText;
+    public TextMeshProUGUI fuckupText;
 
     public float desiredLength;
     public float desiredCurl;
+
     public GameObject confettiPS;
+    public GameObject angryPS;
+    public GameObject winScreen;
+    public GameObject loseScreen;
+
+    public int successAmount;
+    public int lossAmount;
+    public int customerAmount;
+    public float timeLimit;
+    public int scoreAmount;
+
+    public bool gameOver;
 
     private void Awake()
     {
@@ -36,14 +53,32 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GenerateNewOrder();
-
     }
 
     private void Update()
     {
+        customerText.text = "Remaining customers: " + customerAmount.ToString();
+        fuckupText.text = "Lives left: " + (3- lossAmount).ToString();
+        scoreText.text = "Current Score: " + scoreAmount.ToString();
+        resultText.text = scoreAmount.ToString();
         if (CurrentCustomerOrder == null)
         {
             GenerateNewOrder();
+        }
+        if ((customerAmount <= 0) || (lossAmount >= 3))
+        {
+            if (lossAmount >= 0)
+            {
+                loseScreen.SetActive(true);
+            }
+            else if (successAmount >= 3)
+            {
+                winScreen.SetActive(true);
+            }
+            else
+            {
+                loseScreen.SetActive(true);
+            }
         }
     }
 
@@ -51,7 +86,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentCustomerOrder = new HairSection() // applies to both sides of hair
         {
-            curlAmount = Random.Range(0f, 1f) > 0.4f ? Random.Range(20f, 70f) : 0f, // 60% chance of having curls (of any amount)
+            curlAmount = Mathf.RoundToInt(Random.Range(0f, 1f) > 0f ? Random.Range(20f, 80f) : 0f), // 60% chance of having curls (of any amount)
             currentLength = Random.Range(1, 4) // length between 1 and 3 (default is 4)
         };
         orderTextCurl.text = "Customer wants their hair curled to " + CurrentCustomerOrder.curlAmount.ToString() + " units";
@@ -96,11 +131,17 @@ public class GameManager : MonoBehaviour
 
         if (hairCurlAccuracy >= HairCurlMinAccuracy && hairCutAccuracy >= HairCutMinAccuracy)
         {
+            scoreAmount = scoreAmount + ((Mathf.RoundToInt(hairCurlAccuracy - HairCurlMinAccuracy)) + ((Mathf.RoundToInt(hairCutAccuracy - HairCutMinAccuracy))*10));
             Instantiate(confettiPS, new Vector3(0, 80, 100), Quaternion.identity);
+            successAmount++;
+            customerAmount--;
             Debug.Log("Customer is satisfied!");
         }
         else
         {
+            Instantiate(angryPS, new Vector3(0, 80, 100), Quaternion.identity);
+            lossAmount++;
+            customerAmount--;
             Debug.Log("Customer is not satisfied.");
         }
 

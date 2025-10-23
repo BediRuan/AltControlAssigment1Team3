@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class HairSection
@@ -48,6 +49,8 @@ public class PlayerInputManager : MonoBehaviour
 
     public GameObject scissorsGO;
 
+    public GameManager gameManagerSC;
+
 
     public void SetupCurrentHair()
     {
@@ -74,129 +77,154 @@ public class PlayerInputManager : MonoBehaviour
 
     public void Update()
     {
-        switch (currentTool)
+        if (keyboard.pKey.wasPressedThisFrame)
         {
-            case Tools.Scissors:
-                UpdateScissors();
-                break;
-            case Tools.CurlingIron:
-                UpdateCurlingIron();
-                break;
-            case Tools.None:
-                UpdateNone();
-                break;
+            SceneManager.LoadScene(0);
         }
 
-        currentLLength.text = "Current Left Length: " + currentSectionL.currentLength.ToString();
-        currentRLength.text = "Current Right Length: " + currentSectionR.currentLength.ToString();
-        currentLCurl.text = "Current Left Curl:" + currentSectionL.curlAmount.ToString();
-        currentRCurl.text = "Current Right Curl:" + currentSectionR.curlAmount.ToString();
-
-        if (keyboard.enterKey.wasPressedThisFrame)
+        if ((gameManagerSC.customerAmount > 0) || (gameManagerSC.lossAmount < 3))
         {
-            GameManager.instance.CalculateResult(currentSectionL, currentSectionR);
-            SetupCurrentHair();
+            switch (currentTool)
+            {
+                case Tools.Scissors:
+                    UpdateScissors();
+                    break;
+                case Tools.CurlingIron:
+                    UpdateCurlingIron();
+                    break;
+                case Tools.None:
+                    UpdateNone();
+                    break;
+            }
+
+            currentLLength.text = "Current Left Length: " + currentSectionL.currentLength.ToString();
+            currentRLength.text = "Current Right Length: " + currentSectionR.currentLength.ToString();
+            currentLCurl.text = "Current Left Curl: " + ((Mathf.RoundToInt(currentSectionL.curlAmount * 100))/100).ToString();
+            currentRCurl.text = "Current Right Curl: " + ((Mathf.RoundToInt(currentSectionR.curlAmount * 100))/100).ToString();
+
+            if (keyboard.enterKey.wasPressedThisFrame)
+            {
+                GameManager.instance.CalculateResult(currentSectionL, currentSectionR);
+                SetupCurrentHair();
+            }
         }
     }
 
 
     void UpdateNone()
     {
-        if (keyboard.sKey.wasPressedThisFrame)
+        if ((gameManagerSC.customerAmount > 0) || (gameManagerSC.lossAmount < 3))
         {
-            currentTool = Tools.CurlingIron;
+            if (keyboard.sKey.wasPressedThisFrame)
+            {
+                currentTool = Tools.CurlingIron;
+            }
         }
     }
     public void UpdateScissors()
     {
-        selectorGO.transform.position = scissorsGO.transform.position;
-        if (keyboard.sKey.wasPressedThisFrame)
+        if ((gameManagerSC.customerAmount > 0) || (gameManagerSC.lossAmount < 3))
         {
-            currentTool = Tools.CurlingIron;
-            Debug.Log("Switched to Curling Iron");
-        }
+            selectorGO.transform.position = scissorsGO.transform.position;
+            if (keyboard.sKey.wasPressedThisFrame)
+            {
+                currentTool = Tools.CurlingIron;
+                Debug.Log("Switched to Curling Iron");
+            }
 
-        // left hair section
-        if (keyboard.eKey.wasPressedThisFrame) // longest length on the left side
-        {
-            if (currentSectionL.currentLength > 3)
+            // left hair section
+            if (keyboard.eKey.wasPressedThisFrame) // longest length on the left side
             {
-                Instantiate(hairPS, new Vector3(-12,-35,90), Quaternion.identity);
-                currentSectionL.currentLength = 3;
-                Debug.Log("Cut left strand to length " + currentSectionL.currentLength);
+                if (currentSectionL.currentLength > 3)
+                {
+                    Instantiate(hairPS, new Vector3(-12,-35,90), Quaternion.identity);
+                    currentSectionL.currentLength = 3;
+                    Debug.Log("Cut left strand to length " + currentSectionL.currentLength);
+                }
             }
-        }
-        if (keyboard.wKey.wasPressedThisFrame) // medium length on the left side
-        {
-            if (currentSectionL.currentLength > 2)
+            if (keyboard.wKey.wasPressedThisFrame) // medium length on the left side
             {
-                Instantiate(hairPS, new Vector3(-12, -25, 90), Quaternion.identity);
-                currentSectionL.currentLength = 2;
-                Debug.Log("Cut left strand to length " + currentSectionL.currentLength);
+                if (currentSectionL.currentLength > 2)
+                {
+                    Instantiate(hairPS, new Vector3(-12, -25, 90), Quaternion.identity);
+                    currentSectionL.currentLength = 2;
+                    Debug.Log("Cut left strand to length " + currentSectionL.currentLength);
+                }
             }
-        }
-        if (keyboard.qKey.wasPressedThisFrame) // shortest length on the left side
-        {
-            if (currentSectionL.currentLength > 1)
+            if (keyboard.qKey.wasPressedThisFrame) // shortest length on the left side
             {
-                Instantiate(hairPS, new Vector3(-12, -15, 90), Quaternion.identity);
-                currentSectionL.currentLength = 1;
-                Debug.Log("Cut left strand to length " + currentSectionL.currentLength);
+                if (currentSectionL.currentLength > 1)
+                {
+                    Instantiate(hairPS, new Vector3(-12, -15, 90), Quaternion.identity);
+                    currentSectionL.currentLength = 1;
+                    Debug.Log("Cut left strand to length " + currentSectionL.currentLength);
+                }
             }
-        }
 
-        // right hair section
-        if (keyboard.yKey.wasPressedThisFrame) // longest length on the right side
-        {
-            if (currentSectionR.currentLength > 3)
+            // right hair section
+            if (keyboard.yKey.wasPressedThisFrame) // longest length on the right side
             {
-                Instantiate(hairPS, new Vector3(12, -35, 90), Quaternion.identity);
-                currentSectionR.currentLength = 3;
-                Debug.Log("Cut right strand to length " + currentSectionR.currentLength);
+                if (currentSectionR.currentLength > 3)
+                {
+                    Instantiate(hairPS, new Vector3(12, -35, 90), Quaternion.identity);
+                    currentSectionR.currentLength = 3;
+                    Debug.Log("Cut right strand to length " + currentSectionR.currentLength);
+                }
             }
-        }
-        if (keyboard.tKey.wasPressedThisFrame) // medium length on the right side
-        {
-            if (currentSectionR.currentLength > 2)
+            if (keyboard.tKey.wasPressedThisFrame) // medium length on the right side
             {
-                Instantiate(hairPS, new Vector3(12, -25, 90), Quaternion.identity);
-                currentSectionR.currentLength = 2;
-                Debug.Log("Cut right strand to length " + currentSectionR.currentLength);
+                if (currentSectionR.currentLength > 2)
+                {
+                    Instantiate(hairPS, new Vector3(12, -25, 90), Quaternion.identity);
+                    currentSectionR.currentLength = 2;
+                    Debug.Log("Cut right strand to length " + currentSectionR.currentLength);
+                }
             }
-        }
-        if (keyboard.rKey.wasPressedThisFrame) // shortest length on the right side
-        {
-            if (currentSectionR.currentLength > 1)
+            if (keyboard.rKey.wasPressedThisFrame) // shortest length on the right side
             {
-                Instantiate(hairPS, new Vector3(12, -15, 90), Quaternion.identity);
-                currentSectionR.currentLength = 1;
-                Debug.Log("Cut right strand to length " + currentSectionR.currentLength);
+                if (currentSectionR.currentLength > 1)
+                {
+                    Instantiate(hairPS, new Vector3(12, -15, 90), Quaternion.identity);
+                    currentSectionR.currentLength = 1;
+                    Debug.Log("Cut right strand to length " + currentSectionR.currentLength);
+                }
             }
         }
     }
     public void UpdateCurlingIron()
     {
-        selectorGO.transform.position = curlingIronGO.transform.position;
-        if (keyboard.sKey.wasPressedThisFrame)
+        if ((gameManagerSC.customerAmount > 0) || (gameManagerSC.lossAmount < 3))
         {
-            currentTool = Tools.Scissors;
-            Debug.Log("Switched to Scissors");
-        }
-
-        if (keyboard.qKey.isPressed || keyboard.wKey.isPressed || keyboard.eKey.isPressed)
-        {
-            if (currentSectionL.curlAmount < 100)
+            selectorGO.transform.position = curlingIronGO.transform.position;
+            if (keyboard.sKey.wasPressedThisFrame)
             {
-                currentSectionL.curlAmount += CurlRate;
-                Debug.Log("Increased left curl to " + currentSectionL.curlAmount);
+                currentTool = Tools.Scissors;
+                Debug.Log("Switched to Scissors");
             }
-        }
-        if(keyboard.rKey.isPressed || keyboard.tKey.isPressed || keyboard.yKey.isPressed)
-        {
-            if (currentSectionR.curlAmount < 100)
+
+            if (keyboard.qKey.isPressed || keyboard.wKey.isPressed || keyboard.eKey.isPressed)
             {
-                currentSectionR.curlAmount += CurlRate;
-                Debug.Log("Increased right curl to " + currentSectionR.curlAmount);
+                if (currentSectionL.curlAmount < 100)
+                {
+                    currentSectionL.curlAmount += CurlRate;
+                    Debug.Log("Increased left curl to " + currentSectionL.curlAmount);
+                }
+                else
+                {
+                    currentSectionL.curlAmount = 100;
+                }
+            }
+            if(keyboard.rKey.isPressed || keyboard.tKey.isPressed || keyboard.yKey.isPressed)
+            {
+                if (currentSectionR.curlAmount < 100)
+                {
+                    currentSectionR.curlAmount += CurlRate;
+                    Debug.Log("Increased right curl to " + currentSectionR.curlAmount);
+                }
+                else
+                {
+                    currentSectionR.curlAmount = 100;
+                }
             }
         }
     }
