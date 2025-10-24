@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI resultText;
     public TextMeshProUGUI customerText;
     public TextMeshProUGUI fuckupText;
+    
+    [Header("target hair style UI display")]
+    public TargetHairStyleUI targetHairStyleUI;
 
     public float desiredLength;
     public float desiredCurl;
@@ -91,6 +94,13 @@ public class GameManager : MonoBehaviour
         };
         orderTextCurl.text = "Customer wants their hair curled to " + CurrentCustomerOrder.curlAmount.ToString() + " units";
         orderTextLength.text = "Customer wants their hair to be " + CurrentCustomerOrder.currentLength.ToString() + " units long";
+        
+        // update target hair style UI display
+        if (targetHairStyleUI != null)
+        {
+            targetHairStyleUI.UpdateTargetHairStyle(CurrentCustomerOrder.currentLength, CurrentCustomerOrder.curlAmount);
+        }
+        
         Debug.Log($"New Customer Order: Curl Percentage is {CurrentCustomerOrder.curlAmount} | Cut Length is {CurrentCustomerOrder.currentLength}");
     }
 
