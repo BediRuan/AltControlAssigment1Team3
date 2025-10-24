@@ -1345,6 +1345,7 @@ GameObject:
   - component: {fileID: 497529651}
   - component: {fileID: 497529653}
   - component: {fileID: 497529652}
+  - component: {fileID: 497529654}
   m_Layer: 5
   m_Name: Score Text 1
   m_TagString: Untagged
@@ -1472,6 +1473,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497529650}
   m_CullTransparentMesh: 1
+--- !u!114 &497529654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497529650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Febucci.TextAnimator.TMP.Runtime::Febucci.UI.TextAnimator_TMP
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 'YOU WIN!
+
+    Your Score is:'
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 11400000, guid: 829126d10fcf9824cb53a933670df5cf, type: 2}
+  databaseAppearances: {fileID: 11400000, guid: 662e02a8b519e0e489b7347e56523b51, type: 2}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 11400000, guid: cf8de18e1de86cd40b2425555d75b018, type: 2}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags:
+  - wiggle
+  defaultTagsMode: 0
 --- !u!1 &516983957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2361,6 +2396,7 @@ GameObject:
   - component: {fileID: 1153579758}
   - component: {fileID: 1153579760}
   - component: {fileID: 1153579759}
+  - component: {fileID: 1153579761}
   m_Layer: 5
   m_Name: Score Text 2
   m_TagString: Untagged
@@ -2486,6 +2522,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153579757}
   m_CullTransparentMesh: 1
+--- !u!114 &1153579761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153579757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Febucci.TextAnimator.TMP.Runtime::Febucci.UI.TextAnimator_TMP
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 0000
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 11400000, guid: 829126d10fcf9824cb53a933670df5cf, type: 2}
+  databaseAppearances: {fileID: 11400000, guid: 662e02a8b519e0e489b7347e56523b51, type: 2}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 11400000, guid: cf8de18e1de86cd40b2425555d75b018, type: 2}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags:
+  - wiggle
+  defaultTagsMode: 0
 --- !u!1 &1170448182
 GameObject:
   m_ObjectHideFlags: 0
@@ -3029,6 +3097,7 @@ GameObject:
   - component: {fileID: 1453390258}
   - component: {fileID: 1453390260}
   - component: {fileID: 1453390259}
+  - component: {fileID: 1453390261}
   m_Layer: 5
   m_Name: Score Text 1
   m_TagString: Untagged
@@ -3156,6 +3225,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453390257}
   m_CullTransparentMesh: 1
+--- !u!114 &1453390261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453390257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Febucci.TextAnimator.TMP.Runtime::Febucci.UI.TextAnimator_TMP
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 'YOU LOSE
+
+    Try again!'
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 11400000, guid: 829126d10fcf9824cb53a933670df5cf, type: 2}
+  databaseAppearances: {fileID: 11400000, guid: 662e02a8b519e0e489b7347e56523b51, type: 2}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 11400000, guid: cf8de18e1de86cd40b2425555d75b018, type: 2}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags:
+  - wiggle
+  - dangle
+  defaultTagsMode: 0
 --- !u!1 &1465484569
 GameObject:
   m_ObjectHideFlags: 0
