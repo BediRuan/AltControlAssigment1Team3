@@ -10,8 +10,8 @@ public class TargetHairStyleUI : MonoBehaviour
     public TextMeshProUGUI hairLabel;
     
     [Header("Hair Sprites")]
-    [SerializeField] private Sprite[] leftHairSprites;  // 左半片发型图像
-    [SerializeField] private Sprite[] rightHairSprites; // 右半片发型图像
+    [SerializeField] private Sprite[] leftHairSprites; 
+    [SerializeField] private Sprite[] rightHairSprites; 
     
     [Header("Default Sprites")]
     [SerializeField] private Sprite defaultLeftHairSprite;
@@ -120,9 +120,9 @@ public class TargetHairStyleUI : MonoBehaviour
     {
         switch (length)
         {
-            case 1: return "short";
+            case 1: return "long";
             case 2: return "medium";
-            case 3: return "long";
+            case 3: return "short";
             default: return "none";
         }
     }

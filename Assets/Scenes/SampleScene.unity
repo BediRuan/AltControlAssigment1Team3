@@ -969,25 +969,25 @@ MonoBehaviour:
   targetRightHairImage: {fileID: 744294180}
   hairLabel: {fileID: 102035539}
   leftHairSprites:
-  - {fileID: -601313511, guid: e13294a7e92f9fc43897b0d59c5b74b9, type: 3}
-  - {fileID: 1235017836, guid: 1b3e116f4f4a8d84596f50e8800cbe52, type: 3}
-  - {fileID: 538848902, guid: 650f4b984d78f2b4897583ef7ab06ad3, type: 3}
-  - {fileID: 341122536, guid: 6a8dbf50b85faba45a500915ee2a0d4c, type: 3}
-  - {fileID: -1307543462, guid: 85627f27e0a7bcc46aac882934efdaca, type: 3}
-  - {fileID: 1224533122, guid: b93f269d52920ca4a97b7765c0bd30ec, type: 3}
   - {fileID: 1358301336, guid: 171e73a3f892ba644bafe34ae6a883df, type: 3}
   - {fileID: 1791344637, guid: 276ee19ce7c3b4d46907bebc527e4613, type: 3}
   - {fileID: 842090045, guid: bccf805182a1f0546a983fff5e8dd09f, type: 3}
+  - {fileID: 341122536, guid: 6a8dbf50b85faba45a500915ee2a0d4c, type: 3}
+  - {fileID: -1307543462, guid: 85627f27e0a7bcc46aac882934efdaca, type: 3}
+  - {fileID: 1224533122, guid: b93f269d52920ca4a97b7765c0bd30ec, type: 3}
+  - {fileID: -601313511, guid: e13294a7e92f9fc43897b0d59c5b74b9, type: 3}
+  - {fileID: 1235017836, guid: 1b3e116f4f4a8d84596f50e8800cbe52, type: 3}
+  - {fileID: 538848902, guid: 650f4b984d78f2b4897583ef7ab06ad3, type: 3}
   rightHairSprites:
-  - {fileID: 363943793, guid: e13294a7e92f9fc43897b0d59c5b74b9, type: 3}
-  - {fileID: -125362935, guid: 1b3e116f4f4a8d84596f50e8800cbe52, type: 3}
-  - {fileID: 1290147481, guid: 650f4b984d78f2b4897583ef7ab06ad3, type: 3}
-  - {fileID: 2009824041, guid: 6a8dbf50b85faba45a500915ee2a0d4c, type: 3}
-  - {fileID: 1132235956, guid: 85627f27e0a7bcc46aac882934efdaca, type: 3}
-  - {fileID: 1726739086, guid: b93f269d52920ca4a97b7765c0bd30ec, type: 3}
   - {fileID: -260084684, guid: 171e73a3f892ba644bafe34ae6a883df, type: 3}
   - {fileID: 1595766633, guid: 276ee19ce7c3b4d46907bebc527e4613, type: 3}
   - {fileID: -70929745, guid: bccf805182a1f0546a983fff5e8dd09f, type: 3}
+  - {fileID: 2009824041, guid: 6a8dbf50b85faba45a500915ee2a0d4c, type: 3}
+  - {fileID: 1132235956, guid: 85627f27e0a7bcc46aac882934efdaca, type: 3}
+  - {fileID: 1726739086, guid: b93f269d52920ca4a97b7765c0bd30ec, type: 3}
+  - {fileID: 363943793, guid: e13294a7e92f9fc43897b0d59c5b74b9, type: 3}
+  - {fileID: -125362935, guid: 1b3e116f4f4a8d84596f50e8800cbe52, type: 3}
+  - {fileID: 1290147481, guid: 650f4b984d78f2b4897583ef7ab06ad3, type: 3}
   defaultLeftHairSprite: {fileID: -601313511, guid: e13294a7e92f9fc43897b0d59c5b74b9, type: 3}
   defaultRightHairSprite: {fileID: 363943793, guid: e13294a7e92f9fc43897b0d59c5b74b9, type: 3}
 --- !u!1 &347058993
